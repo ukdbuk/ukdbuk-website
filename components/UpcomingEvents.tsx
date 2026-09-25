@@ -1,5 +1,6 @@
+import { events } from "@/data/events"; 
  {/* UPCOMING EVENTS */}
- export default function Header() {
+ export default function UpcomingEvents() {
   return (
 <section id="events" className="bg-white">
   <div className="mx-auto max-w-7xl px-6 py-20">
@@ -30,110 +31,51 @@
 
     <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-      {/* Event 1 */}
-      <article className="overflow-hidden rounded-3xl border border-slate-200 bg-[#f8faf7] shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-        <div className="bg-[#063f35] px-7 py-8 text-white">
-          <p className="text-sm font-semibold uppercase tracking-widest text-orange-300">
-            Community Event
-          </p>
+      {events.map((event) => (
+  <article
+    key={event.id}
+    className="overflow-hidden rounded-3xl border border-slate-200 bg-[#f8faf7] shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+  >
+    <div
+      className={`px-7 py-8 text-white ${
+        event.colour === "orange"
+          ? "bg-orange-600"
+          : event.colour === "emerald"
+            ? "bg-[#0d6652]"
+            : "bg-[#063f35]"
+      }`}
+    >
+      <p className="text-sm font-semibold uppercase tracking-widest text-orange-200">
+        {event.category}
+      </p>
 
-          <h3 className="mt-3 text-2xl font-bold">
-            UKDBUK Community Gathering
-          </h3>
-        </div>
+      <h3 className="mt-3 text-2xl font-bold">
+        {event.title}
+      </h3>
+    </div>
 
-        <div className="p-7">
-          <p className="font-semibold text-slate-800">
-            📅 Date to be announced
-          </p>
+    <div className="p-7">
+      <p className="font-semibold text-slate-800">
+        📅 {event.date}
+      </p>
 
-          <p className="mt-3 text-slate-600">
-            📍 United Kingdom
-          </p>
+      <p className="mt-3 text-slate-600">
+        📍 {event.location}
+      </p>
 
-          <p className="mt-5 leading-7 text-slate-600">
-            Meet fellow Uttarakhandis and celebrate our culture,
-            friendships and community.
-          </p>
+      <p className="mt-5 leading-7 text-slate-600">
+        {event.description}
+      </p>
 
-          <a
-            href="#"
-            className="mt-7 inline-block font-bold text-orange-600"
-          >
-            Event details →
-          </a>
-        </div>
-      </article>
-
-      {/* Event 2 */}
-      <article className="overflow-hidden rounded-3xl border border-slate-200 bg-[#f8faf7] shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-        <div className="bg-orange-600 px-7 py-8 text-white">
-          <p className="text-sm font-semibold uppercase tracking-widest text-orange-100">
-            Culture
-          </p>
-
-          <h3 className="mt-3 text-2xl font-bold">
-            Uttarakhand Cultural Evening
-          </h3>
-        </div>
-
-        <div className="p-7">
-          <p className="font-semibold text-slate-800">
-            📅 Coming soon
-          </p>
-
-          <p className="mt-3 text-slate-600">
-            📍 Venue to be announced
-          </p>
-
-          <p className="mt-5 leading-7 text-slate-600">
-            An evening celebrating Uttarakhandi music, dance, food
-            and traditions.
-          </p>
-
-          <a
-            href="#"
-            className="mt-7 inline-block font-bold text-orange-600"
-          >
-            Event details →
-          </a>
-        </div>
-      </article>
-
-      {/* Event 3 */}
-      <article className="overflow-hidden rounded-3xl border border-slate-200 bg-[#f8faf7] shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-        <div className="bg-[#0d6652] px-7 py-8 text-white">
-          <p className="text-sm font-semibold uppercase tracking-widest text-emerald-100">
-            Family & Community
-          </p>
-
-          <h3 className="mt-3 text-2xl font-bold">
-            Summer Family Day
-          </h3>
-        </div>
-
-        <div className="p-7">
-          <p className="font-semibold text-slate-800">
-            📅 Coming soon
-          </p>
-
-          <p className="mt-3 text-slate-600">
-            📍 Venue to be announced
-          </p>
-
-          <p className="mt-5 leading-7 text-slate-600">
-            A relaxed family day bringing generations of our community
-            together.
-          </p>
-
-          <a
-            href="#"
-            className="mt-7 inline-block font-bold text-orange-600"
-          >
-            Event details →
-          </a>
-        </div>
-      </article>
+      <a
+        href="#"
+        className="mt-7 inline-block font-bold text-orange-600"
+      >
+        Event details →
+      </a>
+    </div>
+  </article>
+))}
 
     </div>
   </div>
