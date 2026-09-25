@@ -22,7 +22,7 @@ import { events } from "@/data/events";
       </div>
 
       <a
-        href="#"
+        href="/events"
         className="font-semibold text-[#063f35] transition hover:text-orange-600"
       >
         View all events →

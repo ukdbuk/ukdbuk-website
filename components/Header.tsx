@@ -29,47 +29,47 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
-          <a href="#" className="text-orange-400">
+          <a href="/" className="text-orange-400">
             Home
           </a>
 
           <a
-            href="#about"
+            href="/about"
             className="transition hover:text-orange-400"
           >
             About
           </a>
 
           <a
-            href="#events"
+            href="/events"
             className="transition hover:text-orange-400"
           >
             Events
           </a>
 
           <a
-            href="#gallery"
+            href="/gallery"
             className="transition hover:text-orange-400"
           >
             Gallery
           </a>
 
           <a
-            href="#uttarakhand"
+            href="/uttarakhand"
             className="transition hover:text-orange-400"
           >
             Discover Uttarakhand
           </a>
 
           <a
-            href="#community"
+            href="/community"
             className="transition hover:text-orange-400"
           >
             Community
           </a>
 
           <a
-            href="#contact"
+            href="/join"
             className="rounded-full bg-orange-600 px-6 py-3 font-semibold text-white transition hover:bg-orange-500"
           >
             Join Us

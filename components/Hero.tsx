@@ -33,14 +33,14 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#events"
+              href="/events"
               className="rounded-full bg-orange-600 px-7 py-3.5 font-semibold text-white shadow-lg transition hover:bg-orange-500"
             >
               Upcoming Events →
             </a>
 
             <a
-              href="#uttarakhand"
+              href="/uttarakhand"
               className="rounded-full border border-white/60 bg-white/10 px-7 py-3.5 font-semibold text-white backdrop-blur transition hover:bg-white/20"
             >
               Discover Uttarakhand
