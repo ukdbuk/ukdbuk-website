@@ -1,5 +1,33 @@
 "use client";
+import { useState } from "react";
 export default function JoinForm() {
+  const [status, setStatus] = useState("");
+   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+
+const form = event.currentTarget;
+
+setStatus("Sending...");
+
+  const formData = new FormData(event.currentTarget);
+
+  try {
+    const response = await fetch("/api/join", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+  form.reset();
+  setStatus("Thank you! Your request has been sent successfully.");
+} else {
+      setStatus("Something went wrong. Please try again.");
+    }
+  } catch {
+    setStatus("Something went wrong. Please try again.");
+  }
+}
+
   return (
     <section className="bg-[#f7faf6]">
       <div className="mx-auto max-w-7xl px-6 py-20">
@@ -18,8 +46,7 @@ export default function JoinForm() {
           </p>
         </div>
         <form 
-        action="/api/join"
-  method="POST"
+        onSubmit={handleSubmit}
   className="mt-10 max-w-3xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
   <div>
     <label
@@ -137,6 +164,11 @@ export default function JoinForm() {
     Join UKDBUK →
   </button>
 </div>
+{status && (
+  <p className="mt-4 font-medium text-[#063f35]">
+    {status}
+  </p>
+)}
 </form>
       </div>
     </section>
