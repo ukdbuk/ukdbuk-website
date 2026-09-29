@@ -67,7 +67,12 @@ export default function Header() {
           >
             Community
           </a>
-
+<a
+  href="/donate"
+  className="transition hover:text-orange-400"
+>
+  Donate
+</a>
           <a
             href="/join"
             className="rounded-full bg-orange-600 px-6 py-3 font-semibold text-white transition hover:bg-orange-500"
