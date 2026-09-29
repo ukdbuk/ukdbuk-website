@@ -52,6 +52,9 @@ export default function DonatePage() {
 >
   Make a Contribution
 </a>
+<p className="mt-3 text-sm text-gray-500">
+  Secure payment processing through Stripe.
+</p>
     </div>
   </div>
 </section>
